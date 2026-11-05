@@ -108,8 +108,8 @@ nav a{position:relative;transition:color .25s ease}nav a::after{content:"";posit
 .btn:hover{transform:translateY(-4px) scale(1.025);box-shadow:0 13px 30px rgba(6,5,35,.3)}.btn:hover::before{left:135%}.btn:active{transform:translateY(-1px) scale(.99)}
 .count div{transition:transform .3s var(--ease),background .3s ease,border-color .3s ease}.count div:hover{transform:translateY(-4px) scale(1.035);background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.5)}
 .count b{font-variant-numeric:tabular-nums}
-.hero>div{animation:riseIn .8s var(--ease) both}.hero aside{animation:riseIn .8s .12s var(--ease) both}
-section{animation:sectionIn .8s var(--ease) both;animation-timeline:view();animation-range:entry 0% cover 26%}
+.hero>div{animation:riseIn .8s var(--ease) }.hero aside{animation:riseIn .8s .12s var(--ease) }
+section{animation:sectionIn .8s var(--ease) ;animation-timeline:view();animation-range:entry 0% cover 26%}
 @keyframes riseIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 @keyframes sectionIn{from{opacity:.2;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 .fee{transition:transform .3s var(--ease),background .3s ease,color .3s ease}.track:hover .fee{transform:translateX(5px);background:var(--accent);color:#10150f}
@@ -161,7 +161,7 @@ nav{padding-left:clamp(16px,3vw,32px);padding-right:clamp(16px,3vw,32px)}
 <div class="wrap hero">
   <div>
     <p class="eyebrow">NATIONAL STUDENT COMPETITION · 2026 EDITION</p><h1>Where student talent meets opportunity.</h1>
-    <p class="lead">A structured online competition for students across India, built around skill, fair evaluation, and meaningful recognition. Choose the Tech &amp; Cyber Quiz, the Website Design Battle, or both.</p>
+    <p class="lead">A structured online competition for students across India, built around skill, fair evaluation, and meaningful recognition. Choose the Tech &amp; Cyber Quiz, the Website Design Battle.</p>
     <div class="cta"><button class="btn" data-open>Register now</button><a class="btn ghost" href="#tracks">See the tracks</a></div>
   </div>
   <aside class="glass panel" aria-label="Event summary">
@@ -186,7 +186,7 @@ nav{padding-left:clamp(16px,3vw,32px);padding-right:clamp(16px,3vw,32px)}
 
 <section id="tracks"><div class="wrap">
   <p class="section-kicker">COMPETITION TRACKS</p><h2>Choose your arena</h2>
-  <p class="sub">Enter one or both. Each track has its own fee, leaderboard and prizes.</p>
+  <p class="sub">Each track has its own fee, leaderboard and prizes.</p>
   <div class="grid2">
     <article class="glass track">
       <h3>Tech &amp; Cyber Quiz Arena</h3>
@@ -255,7 +255,7 @@ nav{padding-left:clamp(16px,3vw,32px);padding-right:clamp(16px,3vw,32px)}
   </div>
   <label for="college">College</label><input id="college" required>
   <div class="row">
-    <div><label for="track">Track</label><select id="track"><option value="quiz">Quiz</option><option value="web">Website Battle</option><option value="both">Both</option></select></div>
+    <div><label for="track">Track</label><select id="track"><option value="quiz">Quiz</option><option value="web">Website Battle</option</select></div>
     <div><label for="mode">Join as</label><select id="mode"><option value="solo">Solo</option><option value="squad">Squad</option></select></div>
   </div>
   <div id="squadBox" class="hide"><label for="squad">Squad name or invite code</label><input id="squad" placeholder="New squad name, or code to join"></div>
@@ -265,7 +265,7 @@ nav{padding-left:clamp(16px,3vw,32px);padding-right:clamp(16px,3vw,32px)}
 
 <script>
 // ---- Edit these before launch ----
-const CONFIG={start:"2026-12-20T19:00:00+05:30",fees:{quiz:99,web:149,both:219},gateway:"https://payments.cashfree.com/forms/campusbattlearena"};
+const CONFIG={start:"2026-12-20T19:00:00+05:30",fees:{quiz:99,web:99},gateway:"https://payments.cashfree.com/forms/campusbattlearena"};
 // ----------------------------------
 const $=id=>document.getElementById(id);
 function tick(){
