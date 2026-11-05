@@ -22,3 +22,4 @@ th{color:var(--accent);font-weight:700}
 .tw{overflow-x:auto}
 footer{max-width:860px;margin:0 auto;padding:10px clamp(20px,4vw,32px) 50px;color:var(--muted);font-size:.92rem;border-top:1px solid rgba(214,182,76,.18)}
 footer a{color:var(--text);margin-right:16px;text-decoration:none;display:inline-block;margin-top:10px}footer a:hover{color:var(--accent)}
+.logo-img{width:34px;height:34px;border-radius:8px;object-fit:cover;display:block}
