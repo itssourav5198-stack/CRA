@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://campusbattlearena.vercel.app/sitemap.xml
