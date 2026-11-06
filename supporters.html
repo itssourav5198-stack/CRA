@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Supporters &amp; Partners · Campus Battle Arena</title>
+<meta name="description" content="The organisers, team, mentors and partners who help make Campus Battle Arena happen.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="legal.css">
+<style>
+.logo-img{width:34px;height:34px;border-radius:8px;object-fit:cover;display:block}
+main{max-width:1000px}
+.lead{font-size:1.1rem;color:var(--muted);max-width:640px;margin:0 0 8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin-top:14px}
+.card{border:1px solid var(--line);border-radius:16px;padding:20px;background:linear-gradient(160deg,rgba(255,255,255,.04),rgba(214,182,76,.04));display:flex;flex-direction:column;gap:6px;transition:transform .25s ease,border-color .25s ease}
+.card:hover{transform:translateY(-3px);border-color:rgba(214,182,76,.55)}
+.av{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;overflow:hidden;font:800 1.1rem 'Sora',sans-serif;color:#10150f;background:linear-gradient(135deg,#b38a20,var(--accent) 55%,#f4e3a0);margin-bottom:6px}
+.av img{width:100%;height:100%;object-fit:cover}
+.card h3{font:700 1.05rem 'Sora',sans-serif;margin:0;letter-spacing:-.02em}
+.role{color:var(--accent);font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.card p{margin:4px 0 0;font-size:.93rem;color:#c5cfc3}
+.card a.visit{margin-top:auto;padding-top:8px;font-size:.9rem;text-decoration:none}
+.card a.visit:hover{text-decoration:underline}
+section[hidden]{display:none}
+.cta{margin-top:44px;border:1px solid var(--line);border-radius:18px;padding:26px;background:rgba(214,182,76,.07)}
+.cta h2{margin:0 0 8px}
+.btn{display:inline-block;margin-top:10px;padding:12px 22px;border-radius:12px;background:#d6b64c;color:#10150f;font-weight:700;text-decoration:none}
+.btn:hover{filter:brightness(1.08)}
+</style>
+</head><body>
+<header class="top"><a class="logo" href="index.html"><img src="logo.png" alt="Campus Battle Arena logo" class="logo-img" onerror="this.outerHTML='<span class=&quot;logo-mark&quot;>CBA</span>'"> Campus Battle Arena</a><a class="back" href="index.html">← Back to home</a></header>
+<main>
+<p class="eyebrow">THE PEOPLE BEHIND CBA</p>
+<h1>Supporters &amp; Partners</h1>
+<p class="lead">Campus Battle Arena runs because of the organisers, mentors, judges and partners who give their time and support to student talent. Thank you.</p>
+
+<section id="organiser"><h2>Organiser</h2><div class="grid" id="g-organiser"></div></section>
+<section id="team" hidden><h2>Core team</h2><div class="grid" id="g-team"></div></section>
+<section id="mentors" hidden><h2>Mentors &amp; judges</h2><div class="grid" id="g-mentors"></div></section>
+<section id="partners" hidden><h2>Partners &amp; sponsors</h2><div class="grid" id="g-partners"></div></section>
+
+<div class="cta">
+<h2>Want to support the next edition?</h2>
+<p>We welcome mentors, judges, college communities, sponsors and prize partners. Write to us and we will get back to you.</p>
+<a class="btn" href="mailto:lyroweb.solution@gmail.com?subject=Supporting%20Campus%20Battle%20Arena">Become a supporter</a>
+</div>
+</main>
+<footer>© 2026 Campus Battle Arena (CBA). Organised by LyroWeb Solutions.<br><a href="terms.html">Terms &amp; Conditions</a><a href="privacy.html">Privacy Policy</a><a href="refund.html">Refund &amp; Cancellation</a><a href="delivery.html">Delivery Policy</a><a href="contact.html">Contact Us</a></footer>
+
+<script>
+/* ===== EDIT HERE =====
+   Add one { } block per person/organisation inside the right list.
+   Fields: name, role, note (short line), logo (image file, optional), link (website/social, optional).
+   Example:
+   {name:"Rahul Sharma", role:"Judge · Web Developer", note:"Frontend lead at XYZ", logo:"rahul.jpg", link:"https://linkedin.com/in/..."}
+   An empty list hides that whole section automatically. */
+const PEOPLE={
+  organiser:[
+    {name:"LyroWeb Solutions", role:"Organiser", note:"Web design and digital services agency running Campus Battle Arena.", logo:"", link:""}
+  ],
+  team:[],
+  mentors:[],
+  partners:[]
+};
+/* ===== END EDIT ===== */
+for(const key in PEOPLE){
+  const list=PEOPLE[key], sec=document.getElementById(key), grid=document.getElementById("g-"+key);
+  if(!sec||!grid) continue;
+  if(!list.length){sec.hidden=true;continue}
+  sec.hidden=false;
+  list.forEach(p=>{
+    const c=document.createElement("div");c.className="card";
+    const av=document.createElement("div");av.className="av";
+    if(p.logo){const i=document.createElement("img");i.src=p.logo;i.alt=p.name;i.onerror=()=>{av.textContent=p.name.trim()[0]||"?";i.remove()};av.appendChild(i)}
+    else av.textContent=(p.name.trim()[0]||"?").toUpperCase();
+    const h=document.createElement("h3");h.textContent=p.name;
+    const r=document.createElement("span");r.className="role";r.textContent=p.role||"";
+    c.append(av,h,r);
+    if(p.note){const n=document.createElement("p");n.textContent=p.note;c.appendChild(n)}
+    if(p.link){const a=document.createElement("a");a.className="visit";a.href=p.link;a.target="_blank";a.rel="noopener noreferrer";a.textContent="Visit →";c.appendChild(a)}
+    grid.appendChild(c);
+  });
+}
+</script>
+</body></html>
